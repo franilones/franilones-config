@@ -4,11 +4,12 @@ server:
 eureka:
   instance:
     hostname: localhost
-    lease-renewal-interval-in-seconds: 10  
-    lease-expiration-duration-in-seconds: 20
   client:
     fetchRegistry: false
     registerWithEureka: false
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
-    
+  server:
+    enable-self-preservation: false 
+    renewal-percent-threshold: 0.49     
+    eviction-interval-timer-in-ms: 3000
